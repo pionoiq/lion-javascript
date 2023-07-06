@@ -63,7 +63,7 @@ while (l >= 0) {
 /* 
 let l = frontEndDev.length; // 6번부터 시작
 
-while (l >= 0) {
+while (l > 0) {
   let value = frontEndDev[l--];
   console.log(value);
 }
