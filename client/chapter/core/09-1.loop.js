@@ -60,14 +60,13 @@ while (l >= 0) {
   --l;
 }
 */
-/* 
+
 let l = frontEndDev.length; // 6번부터 시작
 
-while (l >= 0) {
+while (l > 0) {
   let value = frontEndDev[l--];
   console.log(value);
 }
- */
 
 // 모든 배열 복사 -> 깊은 복사
 // let copyArray = frontEndDev.slice(); // old
