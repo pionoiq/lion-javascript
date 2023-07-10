@@ -55,6 +55,7 @@ console.log(this);
 
 // 화살표 함수식
 // 위의 두 함수와 달리 생성자(ex. new String())를 갖지 않음
+// 일반함수와 생성자는 앞에 대문자를 쓰는지에 차이가 있다.
 // this와 바인딩(연결)되지 않아 바로 위 부모의 this를 가져옴
 // 아래 코드의 부모는 window이기 때문에 this=window
 const arrowFunction = () => {};

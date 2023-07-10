@@ -159,7 +159,7 @@ movePage(
 
 // 즉시 실행 함수 (표현)식
 // Immediately Invoked Function Expression
-let IIFE;
+let IIFE; // 선언과 동시에 실행하는 함수
 
 // 변수의 보호를 위해 탄생
 // var를 지역 변수로 만들기 위해 항상 함수로 감쌌음.
