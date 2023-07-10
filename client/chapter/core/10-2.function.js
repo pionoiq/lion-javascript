@@ -91,6 +91,8 @@ let calculateTotal = function () {
     return acc + item;
   }, 0); // 0 -> 초기값
 
+  // reduce와 forEach의 차이=> return이 있나 없나
+
   // 위와 동일
   // total= realArray4.reduce((acc, item) => acc + item);
   // return realArray4.reduce((acc, item) => acc + item);
