@@ -17,7 +17,8 @@ let resultZ = calculateTotal(9000, -2500, 5000, 11900);
 
 // 함수 선언 → 화살표 함수 (표현)식
 let calcAllMoney = (...args) => {
-  // console.log(arguments); // 화살표 함수는 arguments를 내장하고 있지 않음. 대신 (...args) 를 사용 => rest parameter 나머지 매개변수, 말그대로 나머지만 가져옴. (a, b, ...args) 이렇게도 사용가능
+  // console.log(arguments); // 화살표 함수는 arguments를 내장하고 있지 않음. 대신 (...args) 를 사용 => rest parameter 나머지 매개변수, 말그대로 나머지만 가져옴. (a, b, ...args) 이렇게도 사용가능, 다른 함수에서도 사용가능
+  // arguments도 사용가능
   console.log(args);
 
   let to; /* tal = 0;
