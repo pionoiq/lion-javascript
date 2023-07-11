@@ -4,3 +4,22 @@ h1 {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+nav > ul {
+  width: 100px;
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+}
+nav > ul > li > button {
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: all 0.5s;
+  border: none;
+}
+nav > ul > li > button.is-active {
+  background: orange;
+}
+nav > ul > li:hover > button {
+  transform: translateY(-5px);
+}

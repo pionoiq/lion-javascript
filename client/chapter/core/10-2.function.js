@@ -26,7 +26,7 @@ let calculateTotal = function () {
 
   let total = 0;
 
-  // 1. for 문
+  //! 1. for 문
   /* 
   for (let i = 0; i < arguments.length; i++) {
     console.log(arguments[i]);
@@ -34,7 +34,7 @@ let calculateTotal = function () {
   }
 */
 
-  // 2. for...of 문
+  //! 2. for...of 문
   /* 
   for (const key of arguments) {
   console.log(key);
@@ -42,7 +42,7 @@ let calculateTotal = function () {
   }
  */
 
-  // 3. 배열의 forEach 빌려쓰기
+  //! 3. 배열의 forEach 빌려쓰기
   /* 
   arguments.forEach((item) => {
     console.log(item);
@@ -54,7 +54,7 @@ let calculateTotal = function () {
   });
   */
 
-  // 4. slice를 빌려 유사 배열을 진짜 배열로 만들기
+  //! 4. slice를 빌려 유사 배열을 진짜 배열로 만들기
   /* 
   let realArray = Array.prototype.slice.call(arguments); // -> Instance Method
   console.log(realArray);
@@ -63,7 +63,7 @@ let calculateTotal = function () {
   });
   */
 
-  // 5. Array.from() -> 배열로 만들어주는 메서드, Static Method
+  //! 5. Array.from() -> 배열로 만들어주는 메서드, Static Method
   /* 
   let realArray2 = Array.from(arguments); // -> ES6부터~
   console.log(realArray2);
@@ -72,7 +72,7 @@ let calculateTotal = function () {
   });
   */
 
-  // 6. spread syntax [...] -> 가장 최신
+  //! 6. spread syntax [...] -> 가장 최신
   /* 
   let realArray3 = [...arguments];
   console.log(realArray3);
@@ -83,7 +83,7 @@ let calculateTotal = function () {
   */
   //  return total;
 
-  // 7. Array.reduce -> item을 다 돌 때까지 누적
+  //! 7. Array.reduce -> item을 다 돌 때까지 누적
   let realArray4 = [...arguments];
   console.log(realArray4);
   return realArray4.reduce((acc, item) => {
@@ -93,7 +93,6 @@ let calculateTotal = function () {
 
   // reduce와 forEach의 차이=> return이 있나 없나
 
-  // 위와 동일
   // total= realArray4.reduce((acc, item) => acc + item);
   // return realArray4.reduce((acc, item) => acc + item);
 };
@@ -183,12 +182,11 @@ const MASTER = (function (g) {
   };
 })(window);
 
-// 위 () -> 선언부 , 아래 () -> 실행부
-
 // console.log(x); //접근불가
 // console.log(MASTER);
 // console.log(MASTER.getKey());
 console.log(MASTER.setKey('새로운 비밀번호'));
+// MASTER는 return된 객체를 담고 있다! => MASTER를 객체처럼 사용 (.)할 수 있는 이유!
 
 // import{css as c} from "css.js";
 // c() => 이름을 변경하여 사용
