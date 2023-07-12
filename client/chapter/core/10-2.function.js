@@ -108,7 +108,7 @@ let namedFunctionExpression = function func() {};
 // console.dir(namedFunctionExpression);
 // namedFunctionExpression 함수라는 객체 내에name: "func" 가 생긴 것
 
-// 콜백 함수 (표현)식
+// 콜백 함수 (표현)식 => 함수 안의 함수
 let callbackFunctionExpression = function (isActive, success, fail) {
   // const callback = function(){ console.log('콜백 함수 실행!');
 
