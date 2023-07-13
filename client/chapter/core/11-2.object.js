@@ -68,8 +68,8 @@ const cssMapB = {
   color: '#3f9e97',
 };
 
-// let combinedCssMap = { ...cssMapA, ...cssMapB };
-let combinedCssMap = Object.assign({}, cssMapA, cssMapB);
+let combinedCssMap1 = { ...cssMapA, ...cssMapB };
+let combinedCssMap2 = Object.assign({}, cssMapA, cssMapB);
 // key 이름이 같을 경우 뒤에 오는 것(cssMapB)이 우선
 
 //! 중첩된 프로퍼티에 객체를 포함하는 객체 복사
