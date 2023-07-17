@@ -19,7 +19,7 @@ console.log(friends);
 // console.log(friends);
 
 // 배열 요소 변경
-friends[0] = '선범'; //'선범, 혜미, 송이, 효윤, 선용,승민,상호,영은,희소'
+friends[0] = '선범'; //선범, 혜미, 송이, 효윤, 선용, 승민, 상호, 영은,희소
 console.log(friends);
 
 // 배열 요소 추가
@@ -38,8 +38,18 @@ let pop = friends.pop(); // 뒤 요소 제거
 // 배열 요소 순환(loop)
 // for 문, for ~ of문
 
+for (let i = 0; i < friends.length; i++) {
+  // console.log(friends[i]);
+}
+
+for (let value of friends) {
+  // console.log(value);
+}
+
 // 배열 복사
-let copiedArray;
+// let copiedArray = [...friends];
+let copiedArray = friends.toSorted();
+console.log(copiedArray);
 
 // 다차원 배열
 // 행렬을 저장하는 용도
