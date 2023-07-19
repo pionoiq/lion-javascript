@@ -63,6 +63,8 @@ nav > ul > li:hover > button {
 
 #ball {
   transition: all 1s;
+  pointer-events: none;
+  /* ball을 클릭했을 때 ground의 좌표값을 받지 못하는 것을 방지 */
 }
 
 .emotion {
