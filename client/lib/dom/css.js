@@ -43,8 +43,6 @@ const toggleClass = (node, className) => {
   return node.classList.toggle(className);
 };
 
-addClass('.first', 'hello');
-
 /* css---------------------------------------------- */
 
 // 객체의 속성에 접근할 때 . 표기법은 사용할 수 없다.
