@@ -1,3 +1,3 @@
-console.log('hello, js');
+import { getNode } from './lib/index.js';
 
-const a = 10;
+getNode();
