@@ -1,3 +1,4 @@
+import { refError } from '../error/refError.js';
 /* 
 
 [readystate]
@@ -132,3 +133,85 @@ xhr.delete = (url, onSuccess, onFail) => {
 //     name: 'tiger',
 //   },
 // });
+
+/* promise---------------------------------------- */
+
+const defaultOptions = {
+  method: 'GET',
+  url: '',
+  body: null,
+  errorMessage: '서버와의 통신이 원활하지 않습니다.',
+  headers: {
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+  },
+};
+
+export function xhrPromise(options) {
+  //mixin
+  // const config = { ...defaultOptions, ...options };
+  //  위와 동일    Object.assign: 빈 객체 필수
+  // let config = Object.assign({}, defaultOptions, options);
+  const { method, url, body, errorMessage, headers } = Object.assign(
+    {},
+    defaultOptions,
+    options
+  );
+
+  if (!url) refError('서버와 통신할 url은 필수값입니다.');
+
+  const xhr = new XMLHttpRequest();
+
+  xhr.open(method, url);
+
+  Object.entries(headers).forEach(([key, value]) => {
+    xhr.setRequestHeader(key, value);
+  });
+
+  xhr.send(JSON.stringify(body));
+
+  return new Promise((resolve, reject) => {
+    xhr.addEventListener('readystatechange', () => {
+      if (xhr.readyState === 4) {
+        if (xhr.status >= 200 && xhr.status < 400) {
+          resolve(JSON.parse(xhr.response));
+        } else {
+          reject({ message: errorMessage });
+        }
+      }
+    });
+  });
+}
+
+// xhrPromise({
+//   url: 'https://jsonplaceholder.typicode.com/users',
+//   errorMessage: '알 수 없는 오류',
+// }).then((res) => {
+//   console.log(res);
+// });
+
+// xhrPromise({
+//   url: 'https://jsonplaceholder.typicode.com/users',
+// }).then((res) => {
+//   res.forEach((item) => {
+//     console.log(item);
+//   });
+// });
+
+xhrPromise.get = (url) => {
+  return xhrPromise({ url });
+};
+
+// console.log(xhrPromise.get('https://jsonplaceholder.typicode.com/users'));
+
+xhrPromise.post = (url, body) => {
+  return xhrPromise({ method: 'POST', url, body });
+};
+
+xhrPromise.put = (url, body) => {
+  return xhrPromise({ method: 'PUT', url, body });
+};
+
+xhr.delete = (url) => {
+  return xhr({ method: 'DELETE', url });
+};
